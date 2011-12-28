@@ -39,4 +39,12 @@ public class DatabaseManager {
 		}
 		return wishLists;
 	}
+
+	public void addWishList(WishList l) {
+		try {
+			getHelper().getWishListDao().create(l);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
