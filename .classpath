@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="libs/ormlite-android-4.31.jar" sourcepath="libs/ormlite-android-4.31-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/WishListManager/libs/ormlite-android-4.31-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/ormlite-core-4.31.jar" sourcepath="libs/ormlite-core-4.31-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/WishListManager/libs/ormlite-core-4.31-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
