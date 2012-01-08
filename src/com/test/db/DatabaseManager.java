@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 
+import com.test.model.WishItem;
 import com.test.model.WishList;
 
 public class DatabaseManager {
@@ -47,4 +48,77 @@ public class DatabaseManager {
 			e.printStackTrace();
 		}
 	}
+
+	public WishList getWishListWithId(int wishListId) {
+		WishList wishList = null;
+		try {
+			wishList = getHelper().getWishListDao().queryForId(wishListId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return wishList;
+	}
+	
+
+	public WishItem getWishItemWithId(int wishItemId) {
+		WishItem wishList = null;
+		try {
+			wishList = getHelper().getWishItemDao().queryForId(wishItemId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return wishList;
+	}
+
+	public WishItem newWishItem() {
+		WishItem wishItem = new WishItem();
+		try {
+			getHelper().getWishItemDao().create(wishItem);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return wishItem;
+	}
+
+	public void deleteWishList(WishList wishList) {
+		try {
+			getHelper().getWishListDao().delete(wishList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void deleteWishItem(WishItem wishItem) {
+		try {
+			getHelper().getWishItemDao().delete(wishItem);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+	}
+
+	public void updateWishItem(WishItem item) {
+		try {
+			getHelper().getWishItemDao().update(item);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void refreshWishList(WishList wishList) {
+		try {
+			getHelper().getWishListDao().refresh(wishList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void updateWishList(WishList wishList) {
+		try {
+			getHelper().getWishListDao().update(wishList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
 }

@@ -11,6 +11,9 @@ public class WishItem {
 	@DatabaseField
 	private String name;
 
+	@DatabaseField
+	private String description;
+
 	@DatabaseField(foreign=true,foreignAutoRefresh=true)
 	private WishList list;
 
@@ -36,5 +39,13 @@ public class WishItem {
 
 	public WishList getList() {
 		return list;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDescription() {
+		return description;
 	}
 }

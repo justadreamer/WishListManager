@@ -21,6 +21,14 @@
         <activity
             android:label="Add wish list" 
             android:name=".AddWishListActivity" />
+
+		<activity
+            android:label="Wish list" 
+            android:name=".WishItemListActivity" />
+
+        <activity
+            android:label="Add wish" 
+            android:name=".AddWishItemActivity" />        
     </application>
 
 </manifest>

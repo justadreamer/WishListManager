@@ -16,6 +16,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit wish list name" />
+	<Button
+        android:id="@+id/button_delete"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete list" />
     <ListView
         android:id="@+id/list_view"
         android:layout_above="@id/button_add"

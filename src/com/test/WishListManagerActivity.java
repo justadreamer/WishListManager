@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -40,7 +42,7 @@ public class WishListManagerActivity extends Activity {
     }
 
     private void setupListView(ListView lv) {
-    	List<WishList> wishLists = DatabaseManager.getInstance().getAllWishLists();
+    	final List<WishList> wishLists = DatabaseManager.getInstance().getAllWishLists();
     	
     	List<String> titles = new ArrayList<String>();
     	for (WishList wl : wishLists) {
@@ -49,6 +51,17 @@ public class WishListManagerActivity extends Activity {
 
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titles);
     	lv.setAdapter(adapter);
+
+    	final Activity activity = this;
+    	lv.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				WishList wishList = wishLists.get(position);
+				Intent intent = new Intent(activity, WishItemListActivity.class);
+				intent.putExtra(Constants.keyWishListId, wishList.getId());
+				startActivity(intent);
+			}
+		});
     }
     
     private void setupButton(Button btn) {
